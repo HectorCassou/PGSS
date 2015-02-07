@@ -4,16 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemeSolaire
+namespace GenerateurSystemeStellaire
 {
-    class Cite
+    public class Cite
     {
         #region Attributs Cité
-        public int id;
-        public string nom = "Cité";
-        public bool principale = false; // est-ce la plus grande ville de la population ?
-        public int nbHabitant = 0;
-        public string commentaire = "";
+        public int id { get; set; }
+        public string nom { get; set; }
+        public bool principale { get; set; } // est-ce la plus grande ville de la population ?
+        public int nbHabitant { get; set; }
+        public string commentaire { get; set; }
+        #endregion
+
+        #region Constructeur Cite
+        public Cite()
+        {
+            nom = "Cité";
+            principale = false;
+            nbHabitant = 0;
+            commentaire = "";
+        }
         #endregion
     }
 }

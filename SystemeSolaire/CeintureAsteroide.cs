@@ -4,19 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemeSolaire
+namespace GenerateurSystemeStellaire
 {
-    class CeintureAsteroide
+    public class CeintureAsteroide
     {
         #region Attributs CeintureAstéroïde
-        public int id;
-        public string nom = "Ceinture d'Astéroïde";
-        public string zone = "";
-        public string densiteAtmos = "Vide";
-        public string densite = "";
-        public List<AsteroideMajeur> Asteroides = new List<AsteroideMajeur>();
-        public Population population = new Population();
-        public string commentaire = "";
+        public int id { get; set; }
+        public string nom { get; set; }
+        public string zone { get; set; }
+        public string densiteAtmos { get; set; }
+        public string densite { get; set; }
+        public List<AsteroideMajeur> Asteroides { get; set; }
+        public Population population { get; set; }
+        public string commentaire { get; set; }
+        #endregion
+
+        #region Constructeur CeintureAsteroide
+        public CeintureAsteroide()
+        {
+            nom = "Ceinture d'Astéroïde";
+            zone = "";
+            densiteAtmos = "Vide";
+            densite = "";
+            Asteroides = new List<AsteroideMajeur>();
+            population = new Population();
+            commentaire = "";
+        }
         #endregion
     }
 }

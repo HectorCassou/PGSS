@@ -4,35 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemeSolaire
+namespace GenerateurSystemeStellaire
 {
-    class Population
+    public class Population
     {
         #region Attributs Population
-        public int id;
-        public string nom = "Population";
-        public string localisation = ""; // Systeme Solaire
-                                         // Planete
-                                         // Satellite
-                                         // Asteroide
-        public string type = "";  // population native
-                                  // population coloniale
-        public string categorieHabitant = "";
-        public int nbHabitant = 0;
-        public List<Cite> Cites = new List<Cite>();
-        public int niveauTechno = 0; // /!\ en faire un type enumératif /!\
-        public int modificateurColonie = 0;
-        public int participation = 0; // score qui détermine la politique de la population
-        public int diversite = 0;     // score qui détermine la politique de la population
-        public int control = 0;       // score qui détermine la politique de la population
-        public int soutien = 0;       // score qui détermine la politique de la population
-        public int nbColonieMajeure = 0;
-        public int nbColonieMineure = 0;
-        public int nbBaseMilitaire = 0;
-        public int nbBaseScientifique = 0;
-        public int nbBaseDefensive = 0;
-        public int nbBaseCommerciale = 0;
-        public string commentaire = "";
+        public int id { get; set; }
+        public string nom { get; set; }
+        public string localisation { get; set; }
+        public string type { get; set; }
+        public string categorieHabitant { get; set; }
+        public int nbHabitant { get; set; }
+        public List<Cite> Cites { get; set; }
+        public int niveauTechno { get; set; } // /!\ en faire un type enumératif /!\
+        public int modificateurColonie { get; set; }
+        public int participation { get; set; }
+        public int diversite { get; set; }
+        public int control { get; set; }
+        public int soutien { get; set; }
+        public int nbColonieMajeure { get; set; }
+        public int nbColonieMineure { get; set; }
+        public int nbBaseMilitaire { get; set; }
+        public int nbBaseScientifique { get; set; }
+        public int nbBaseDefensive { get; set; }
+        public int nbBaseCommerciale { get; set; }
+        public string commentaire { get; set; }
+        #endregion
+
+        #region Constructeur Population
+        public Population()
+        {
+            nom = "Population";
+            localisation = "";
+            type = "";
+            categorieHabitant = "";
+            nbHabitant = 0;
+            Cites = new List<Cite>();
+            niveauTechno = 0; // /!\ en faire un type enumératif /!\
+            modificateurColonie = 0;
+            participation = 0;
+            diversite = 0;    
+            control = 0;       
+            soutien = 0;       
+            nbColonieMajeure = 0;
+            nbColonieMineure = 0;
+            nbBaseMilitaire = 0;
+            nbBaseScientifique = 0;
+            nbBaseDefensive = 0;
+            nbBaseCommerciale = 0;
+            commentaire = "";
+        }
         #endregion
     }
 }

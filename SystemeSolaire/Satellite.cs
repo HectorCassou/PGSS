@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemeSolaire
+namespace GenerateurSystemeStellaire
 {
-    class Satellite
+    public class Satellite
     {
         #region Attributs Satellite
-        public int id;
-        public string nom = "Satellite";
-        public string zone = "";
-        public string densiteAtmos = "";
-        public List<Population> Populations = new List<Population>();
-        public string type = "";
-        public string categorieTaille = ""; // cette propriété ne peut prendre que les valeurs : 
+        public int id { get; set; }
+        public string nom { get; set; }
+        public string zone { get; set; }
+        public string densiteAtmos { get; set; }
+        public List<Population> Populations { get; set; }
+        public string type { get; set; }
+        public string categorieTaille { get; set; } // cette propriété ne peut prendre que les valeurs : 
         // 0 correspondant à la catégorie Minuscule
         // 1 correspondant à la catégorie Fine
         // 2 correspondant à la catégorie Toute Petite
@@ -27,26 +27,55 @@ namespace SystemeSolaire
         // 8 correspondant à la catégorie Géante Gazeuse Moyenne
         // 9 correspondant à la catégorie Enorme Géante Gazeuse
         // 10 correspondant à la catégorie Gargantuesque Géante Gazeuse
-        public string diametre = ""; //le diametre en miles
-        public string gravite = "";
-        public string atmosCompo = "";
-        public string pollution = "";
-        public string geologie = "";
-        public string volcanisme = "";
-        public string hydrosphere = "";
-        public int tauxHydro = 0;
-        public string geographie;
-        public string climat = "";
-        public int tempPole = 0;
-        public string densiteBio = "";
-        public string complexiteBio = "";
-        public bool artefactAncien = false;
-        public int mixPopulation = 0; // cette propriété ne peut prendre que quatre valeurs : 0 si il n'y a pas de population du tout
+        public string diametre { get; set; } //le diametre en miles
+        public string gravite { get; set; }
+        public string atmosCompo { get; set; }
+        public string pollution { get; set; }
+        public string geologie { get; set; }
+        public string volcanisme { get; set; }
+        public string hydrosphere { get; set; }
+        public int tauxHydro { get; set; }
+        public string geographie { get; set; }
+        public string climat { get; set; }
+        public int tempPole { get; set; }
+        public string densiteBio { get; set; }
+        public string complexiteBio { get; set; }
+        public bool artefactAncien { get; set; }
+        public int mixPopulation { get; set; } // cette propriété ne peut prendre que quatre valeurs : 0 si il n'y a pas de population du tout
         //                                                                                    1 si la population de ce monde est exclusivement native;
         //                                                                                    2 si la population de ce monde est exclusivement coloniale;
         //                                                                                    3 si la population de ce monde est un mélange natif/colonial.
-        public int distance = 0;
-        public string commentaire = "";
+        public int distance { get; set; }
+        public string commentaire { get; set; }
+        #endregion
+
+        #region Constructeur Satellite
+        public Satellite()
+        {
+            nom = "Satellite";
+            zone = "";
+            densiteAtmos = "";
+            Populations = new List<Population>();
+            type = "";
+            categorieTaille = "";
+            diametre = "";
+            gravite = "";
+            atmosCompo = "";
+            pollution = "";
+            geologie = "";
+            volcanisme = "";
+            hydrosphere = "";
+            tauxHydro = 0;
+            geographie = "";
+            climat = "";
+            tempPole = 0;
+            densiteBio = "";
+            complexiteBio = "";
+            artefactAncien = false;
+            mixPopulation = 0;
+            distance = 0;
+            commentaire = "";
+        }
         #endregion
     }
 }
