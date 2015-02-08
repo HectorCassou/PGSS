@@ -30,6 +30,17 @@ namespace GenerateurSystemeStellaire
             population = new Population();
             commentaire = "";
         }
+
+        public CeintureAsteroide(string zoneT)
+        {
+            nom = "Ceinture d'Astéroïde";
+            zone = zoneT;
+            densiteAtmos = "Vide";
+            densite = "";
+            Asteroides = new List<AsteroideMajeur>();
+            population = new Population();
+            commentaire = "";
+        }
         #endregion
     }
 }

@@ -54,6 +54,30 @@ namespace GenerateurSystemeStellaire
             nbBaseCommerciale = 0;
             commentaire = "";
         }
+
+        // constructeur pour les races coloniales du système stellaire (humain, centauri, minbari, narn, ...)
+        public Population(string nomPC, string locaPC, string typePC, int nivotechPC, int modifPC, int p, int d, int c, int s)
+        {
+            nom = nomPC;
+            localisation = locaPC;
+            type = typePC;
+            categorieHabitant = "";
+            nbHabitant = 0;
+            Cites = new List<Cite>();
+            niveauTechno = nivotechPC; // /!\ en faire un type enumératif /!\
+            modificateurColonie = modifPC;
+            participation = p;
+            diversite = d;
+            control = c;
+            soutien = s;
+            nbColonieMajeure = 0;
+            nbColonieMineure = 0;
+            nbBaseMilitaire = 0;
+            nbBaseScientifique = 0;
+            nbBaseDefensive = 0;
+            nbBaseCommerciale = 0;
+            commentaire = "";
+        }
         #endregion
     }
 }

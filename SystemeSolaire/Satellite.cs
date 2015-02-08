@@ -27,7 +27,7 @@ namespace GenerateurSystemeStellaire
         // 8 correspondant à la catégorie Géante Gazeuse Moyenne
         // 9 correspondant à la catégorie Enorme Géante Gazeuse
         // 10 correspondant à la catégorie Gargantuesque Géante Gazeuse
-        public string diametre { get; set; } //le diametre en miles
+        public int diametre { get; set; } //le diametre en miles
         public string gravite { get; set; }
         public string atmosCompo { get; set; }
         public string pollution { get; set; }
@@ -58,7 +58,7 @@ namespace GenerateurSystemeStellaire
             Populations = new List<Population>();
             type = "";
             categorieTaille = "";
-            diametre = "";
+            diametre = 0;
             gravite = "";
             atmosCompo = "";
             pollution = "";

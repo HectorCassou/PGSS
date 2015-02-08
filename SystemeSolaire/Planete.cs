@@ -27,7 +27,7 @@ namespace GenerateurSystemeStellaire
         // 8 correspondant à la catégorie Géante Gazeuse Moyenne
         // 9 correspondant à la catégorie Enorme Géante Gazeuse
         // 10 correspondant à la catégorie Gargantuesque Géante Gazeuse
-        public string diametre { get; set; } // représenté par le nom de la catégorie + le diametre en km
+        public int diametre { get; set; } // représenté par le nom de la catégorie + le diametre en km
         public string gravite { get; set; }
         public string atmosCompo { get; set; }
         public string pollution { get; set; }
@@ -60,7 +60,35 @@ namespace GenerateurSystemeStellaire
             Populations = new List<Population>();
             type = "";
             taille = 0;
-            diametre = "";
+            diametre = 0;
+            gravite = "";
+            atmosCompo = "";
+            pollution = "";
+            geologie = "";
+            volcanisme = "";
+            hydrosphere = "";
+            tauxHydro = 0;
+            geographie = "";
+            climat = "";
+            tempPole = 0;
+            densiteBio = "";
+            complexiteBio = "";
+            artefactAncien = false;
+            mixPopulation = 0;
+            Satellites = new List<Satellite>();
+            nbMoonlet = 0;
+            commentaire = "";
+        }
+
+        public Planete(string zoneN, string typeN)
+        {
+            nom = "Planète";
+            zone = zoneN;
+            densiteAtmos = "";
+            Populations = new List<Population>();
+            type = typeN;
+            taille = 0;
+            diametre = 0;
             gravite = "";
             atmosCompo = "";
             pollution = "";
