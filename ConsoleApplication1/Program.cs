@@ -79,10 +79,11 @@ namespace ConsoleApplication1
                         for (int j = 0; j < systeme.Etoiles[i].Planetes.Count; j++)
                         {
                             Console.WriteLine("  Planete n°{0} :", j + 1);
-                            Console.WriteLine("  Zone de Planete : {0}", systeme.Etoiles[i].Planetes[j].zone);
-                            Console.WriteLine("  Type de Planete : {0}", systeme.Etoiles[i].Planetes[j].type);
-                            Console.WriteLine("  Categorie de la taille de Planete : {0}", systeme.Etoiles[i].Planetes[j].taille);
-                            Console.WriteLine("  Diametre de Planete : {0}\n", systeme.Etoiles[i].Planetes[j].diametre);
+                            Console.WriteLine("  Zone de la Planete : {0}", systeme.Etoiles[i].Planetes[j].zone);
+                            Console.WriteLine("  Type de la Planete : {0}", systeme.Etoiles[i].Planetes[j].type);
+                            Console.WriteLine("  Categorie de la taille de la Planete : {0}", systeme.Etoiles[i].Planetes[j].taille);
+                            Console.WriteLine("  Diametre de la Planete : {0}", systeme.Etoiles[i].Planetes[j].diametre);
+                            Console.WriteLine("  Gravité de la Planète : {0}\n", systeme.Etoiles[i].Planetes[j].gravite);
                             compteurElements = j + 1;
                         }
                         for (int j = 0; j < systeme.Etoiles[i].Ceintures.Count; j++)

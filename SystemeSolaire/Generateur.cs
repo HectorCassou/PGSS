@@ -648,6 +648,134 @@ namespace GenerateurSystemeStellaire
             return sys;
         }
         // Etape n°14
+        public Planete DeterminerGravitePlanete(Planete planete)
+        {
+            // correspond à un 1d20
+            JetDes jet = new JetDes();
+            int jetDes = jet.JeterD(1, 20);
+
+            // règle additionnelle : si la planète est glaciale alors il faut soustraire 4 au jet de dé
+            if (planete.type == "Glaciale")
+            {
+                jetDes = jetDes - 4;
+            }
+
+            // compare la chaine de caractère correspondant à la catégorie de taille de la planète pour déterminer la gravité
+            switch (planete.taille)
+            {
+                case 0:
+                    if (jetDes < 20)
+                    {
+                        planete.gravite = "Microgravité";
+                    }
+                    else
+                    {
+                        planete.gravite = "Très Basse";
+                    }
+                    break;
+                case 1:
+                    if (jetDes < 16)
+                    {
+                        planete.gravite = "Microgravité";
+                    }
+                    else
+                    {
+                        planete.gravite = "Très Basse";
+                    }
+                    break;
+                case 2:
+                    if (jetDes < 11)
+                    {
+                        planete.gravite = "Microgravité";
+                    }
+                    else
+                    {
+                        planete.gravite = "Très Basse";
+                    }
+                    break;
+                case 3:
+                    if (jetDes < 11)
+                    {
+                        planete.gravite = "Très Basse";
+                    }
+                    else if (jetDes < 20 && jetDes > 10)
+                    {
+                        planete.gravite = "Basse";
+                    }
+                    else
+                    {
+                        planete.gravite = "Moyenne";
+                    }
+                    break;
+                case 4:
+                    if (jetDes < 3)
+                    {
+                        planete.gravite = "Très Basse";
+                    }
+                    else if (jetDes < 8 && jetDes > 2)
+                    {
+                        planete.gravite = "Basse";
+                    }
+                    else if (jetDes < 16 && jetDes > 7)
+                    {
+                        planete.gravite = "Moyenne";
+                    }
+                    else
+                    {
+                        planete.gravite = "Forte";
+                    }
+                    break;
+                case 5:
+                    if (jetDes < 3)
+                    {
+                        planete.gravite = "Basse";
+                    }
+                    else if (jetDes < 6 && jetDes > 2)
+                    {
+                        planete.gravite = "Moyenne";
+                    }
+                    else if (jetDes < 13 && jetDes > 7)
+                    {
+                        planete.gravite = "Forte";
+                    }
+                    else if (jetDes < 19 && jetDes > 12)
+                    {
+                        planete.gravite = "Très Forte";
+                    }
+                    else
+                    {
+                        planete.gravite = "Extrème";
+                    }
+                    break;
+                case 6:
+                    if (jetDes < 2)
+                    {
+                        planete.gravite = "Basse";
+                    }
+                    else if (jetDes < 4 && jetDes > 1)
+                    {
+                        planete.gravite = "Moyenne";
+                    }
+                    else if (jetDes < 11 && jetDes > 3)
+                    {
+                        planete.gravite = "Forte";
+                    }
+                    else if (jetDes < 17 && jetDes > 10)
+                    {
+                        planete.gravite = "Très Forte";
+                    }
+                    else
+                    {
+                        planete.gravite = "Extrème";
+                    }
+                    break;
+                default:
+                    // la gravité pour les géantes gazeuses suit des règles spéciales
+                    planete.gravite = "Extrème";
+                    break;
+            }
+            return planete;
+        }
         // Etape n°15
         // Etape n°16
         // Etape n°17
@@ -754,6 +882,13 @@ namespace GenerateurSystemeStellaire
         // Partie n°3
         public SystemeStellaire partie3(SystemeStellaire sys)
         {
+            for (int i = 0; i < sys.Etoiles.Count; i++)
+			{
+			    for (int j = 0; j < sys.Etoiles[i].Planetes.Count; j++)
+			    {
+                    sys.Etoiles[i].Planetes[j] = DeterminerGravitePlanete(sys.Etoiles[i].Planetes[j]);
+			    }
+			}
             return sys;
         }
         // Partie n°4
@@ -800,6 +935,7 @@ namespace GenerateurSystemeStellaire
             systeme = ExecuterPartie(0, systeme);
             systeme = ExecuterPartie(1, systeme);
             systeme = ExecuterPartie(2, systeme);
+            systeme = ExecuterPartie(3, systeme);
             return systeme;
         }
 
@@ -816,6 +952,9 @@ namespace GenerateurSystemeStellaire
                     break;
                 case 2:
                     sys = partie2(sys);
+                    break;
+                case 3:
+                    sys = partie3(sys);
                     break;
             }
             return sys;
