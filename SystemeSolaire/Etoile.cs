@@ -35,34 +35,3 @@ namespace GenerateurSystemeStellaire
         #endregion
     }
 }
-
-//public class Etoile
-//{
-//    #region Attributs Etoile
-//    public SystemeSolaire systemSE;
-//    public ArrayList tableElementSysteme;
-//    public string id_E = "";
-//    public string nomE = "";
-//    public string typeE = "";
-//    public string tailleE = "";
-//    public int qualificationType = 0;
-//    public string commentaireE = "";
-//    #endregion
-
-//    #region Méthodes Etoile
-//
-// 
-//    public void DeterminerTableElementSS()
-//    {
-//
-//    #region Constructeurs Etoile
-//    public Etoile(SystemeSolaire system, int rang)
-//    {
-//        this.systemSE = system;
-//        this.id_E = "E" + rang;
-//        this.nomE = "Etoile n°" + rang;
-//        this.TypeEtoile();
-//        this.TailleEtoile();
-//    }
-//    #endregion
-//}

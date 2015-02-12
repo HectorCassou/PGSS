@@ -41,10 +41,8 @@
   <ItemGroup>
     <Compile Include="CeintureAsteroide.cs" />
     <Compile Include="AsteroideMajeur.cs" />
-    <Compile Include="Cite.cs" />
     <Compile Include="JetDes.cs" />
     <Compile Include="Generateur.cs" />
-    <Compile Include="Satellite.cs" />
     <Compile Include="Planete.cs" />
     <Compile Include="Population.cs" />
     <Compile Include="SystemeStellaire.cs" />

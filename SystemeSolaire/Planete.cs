@@ -10,6 +10,7 @@ namespace GenerateurSystemeStellaire
     {
         #region Attributs Planète
         public int id { get; set; }
+        public bool estSatellite { get; set; }
         public string nom { get; set; }
         public string zone { get; set; }
         public string densiteAtmos { get; set; }
@@ -46,43 +47,16 @@ namespace GenerateurSystemeStellaire
         //                                                                                    2 si la population de ce monde est exclusivement coloniale;
         //                                                                                    3 si la population de ce monde est un mélange natif/colonial.
 
-        public List<Satellite> Satellites { get; set; }
-        public int nbMoonlet { get; set; }
+        public List<Planete> Satellites { get; set; }
+        public int nbMoonlets { get; set; }
         public string commentaire { get; set; }
         #endregion
 
         #region Constructeur Planete
-        public Planete()
+        public Planete(string zoneN, string typeN, bool satellite)
         {
-            nom = "Planète";
-            zone = "";
-            densiteAtmos = "";
-            Populations = new List<Population>();
-            type = "";
-            taille = 0;
-            diametre = 0;
-            gravite = "";
-            atmosCompo = "";
-            pollution = "";
-            geologie = "";
-            volcanisme = "";
-            hydrosphere = "";
-            tauxHydro = 0;
-            geographie = "";
-            climat = "";
-            tempPole = 0;
-            densiteBio = "";
-            complexiteBio = "";
-            artefactAncien = false;
-            mixPopulation = 0;
-            Satellites = new List<Satellite>();
-            nbMoonlet = 0;
-            commentaire = "";
-        }
-
-        public Planete(string zoneN, string typeN)
-        {
-            nom = "Planète";
+            estSatellite = satellite;
+            nom = "";
             zone = zoneN;
             densiteAtmos = "";
             Populations = new List<Population>();
@@ -103,8 +77,37 @@ namespace GenerateurSystemeStellaire
             complexiteBio = "";
             artefactAncien = false;
             mixPopulation = 0;
-            Satellites = new List<Satellite>();
-            nbMoonlet = 0;
+            Satellites = new List<Planete>();
+            nbMoonlets = 0;
+            commentaire = "";
+        }
+
+        public Planete(string zoneN, bool satellite)
+        {
+            estSatellite = satellite;
+            nom = "";
+            zone = zoneN;
+            densiteAtmos = "";
+            Populations = new List<Population>();
+            type = "";
+            taille = 0;
+            diametre = 0;
+            gravite = "";
+            atmosCompo = "";
+            pollution = "";
+            geologie = "";
+            volcanisme = "";
+            hydrosphere = "";
+            tauxHydro = 0;
+            geographie = "";
+            climat = "";
+            tempPole = 0;
+            densiteBio = "";
+            complexiteBio = "";
+            artefactAncien = false;
+            mixPopulation = 0;
+            Satellites = new List<Planete>();
+            nbMoonlets = 0;
             commentaire = "";
         }
         #endregion
